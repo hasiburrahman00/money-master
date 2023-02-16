@@ -5,6 +5,12 @@ const cloths = document.getElementById('cloths');
 const calculate = document.getElementById('calculate');
 const totalExpance = document.getElementById('total-expance');
 const netBalance = document.getElementById('balance');
+const savePercent = document.getElementById('save');
+const savingBtn = document.getElementById('saving-btn');
+const savingAmount = document.getElementById('saving-amount');
+const remainingBlance = document.getElementById('remain-balance')
+
+
 
 function calculator(income, food, rent, cloths) {
     let myIncome = income.value;
@@ -25,16 +31,29 @@ function calculator(income, food, rent, cloths) {
         food.value = '';
         cloths.value = '';
         rent.value = '';
-        const balance = parseFloat(myIncome) - totalExpance; 
+        const balance = parseFloat(myIncome) - totalExpance;
 
-        if(totalExpance > balance) {
+        if (totalExpance > balance) {
             window.alert("Expance is greater then Income !!!")
             return [0, 0];
-        }else {
+        } else {
             return [totalExpance, balance];
         }
 
-        
+
+    }
+}
+
+
+function percentCalculate(percent) {
+    console.log(percent);
+    if (percent.length === 0) {
+        window.alert("Empty Input Field !!!");
+        return 0;
+    } else {
+        const percentNumber = parseFloat(percent);
+        const prevBalance = parseFloat(netBalance.innerText);
+        return (percentNumber / 100) * prevBalance;
     }
 }
 
@@ -42,9 +61,18 @@ function calculator(income, food, rent, cloths) {
 
 calculate.addEventListener('click', function () {
     const expance = calculator(income, food, rent, cloths);
-    
+
     totalExpance.innerText = expance[0];
     netBalance.innerText = expance[1];
 
 })
 
+savingBtn.addEventListener('click', function () {
+    const saving = percentCalculate(savePercent.value);
+    savingAmount.innerText = saving;
+
+    remainingBlance.innerText = parseFloat(netBalance.innerText) - saving;
+
+
+
+})
