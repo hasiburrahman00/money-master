@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-area h2 {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 59px;
+    color: #31A5AC;
+
+}
+
+.fa-sack-dollar {
+    color: goldenrod;
+}
+
+.banner-calculate {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    gap: 40px;
+
+}
+.banner-calculate input {
+    padding: 8px 20px;
+    border: 1px solid #DCDCDC;
+    background-color: #DCDCDC;
+    outline: 0;
+    border-radius: 8px;
+    margin: 10px;
+}
+.banner-calculate button {
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    background-color: #31A5AC;
+}
